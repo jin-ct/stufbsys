@@ -1,0 +1,39 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"third_party/jwt-cpp/example/traits/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "nlohmann-json::@8694cd790f0dcdfaf221"
+		},
+		{
+			"id" : "kazuho-picojson::@8694cd790f0dcdfaf221"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@8694cd790f0dcdfaf221",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "third_party/jwt-cpp/example/traits",
+		"source" : "third_party/jwt-cpp/example/traits"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

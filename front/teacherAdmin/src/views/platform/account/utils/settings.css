@@ -1,0 +1,33 @@
+.settings-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 40px 0;
+}
+.box-card {
+  width: 100%;
+  max-width: 480px;
+  min-width: 320px;
+}
+.settings-form {
+  padding: 20px 0;
+}
+.avatar-uploader {
+  display: flex;
+  align-items: center;
+}
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+.top-img {
+  width: 160px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}

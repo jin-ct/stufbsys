@@ -1,0 +1,1644 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						6,
+						23
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.jwt-cpp-Debug-5dc782b05b50d1dfc77a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "third_party/jwt-cpp",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "_deps/nlohmann_json-build",
+					"jsonFile" : "directory-_deps.nlohmann_json-build-Debug-4d6d53dfd92c4ef41674.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "build/_deps/nlohmann_json-src",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp/example",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-third_party.jwt-cpp.example-Debug-751c847211e16d0b5f5a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "third_party/jwt-cpp/example",
+					"targetIndexes" : 
+					[
+						1,
+						9,
+						10,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp/example/traits",
+					"jsonFile" : "directory-third_party.jwt-cpp.example.traits-Debug-71895438acc5e0e92dbc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "third_party/jwt-cpp/example/traits",
+					"targetIndexes" : 
+					[
+						2,
+						12,
+						13
+					]
+				},
+				{
+					"build" : "third_party/libbcrypt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libbcrypt-Debug-32a5f26244be32a38594.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "third_party/libbcrypt",
+					"targetIndexes" : 
+					[
+						0,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "stuFBSys",
+					"targetIndexes" : 
+					[
+						3,
+						6,
+						23
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "jwt-cpp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "jwt-cpp-examples",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						1,
+						9,
+						10,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "jwt-cpp-traits",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						2,
+						12,
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "bcrypt",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-ALL_BUILD-Debug-0af048670e32a9848db1.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-ALL_BUILD-Debug-2f20aab9e5323fb2c737.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-ALL_BUILD-Debug-029d0213ea71523b1223.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-a2343b3af338e3db14d2.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@ec2d60bb9e6b78ebcdc0",
+					"jsonFile" : "target-ALL_BUILD-Debug-046540cd3e7cff579741.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@7ad6b70f65d238af1bcf",
+					"jsonFile" : "target-ALL_BUILD-Debug-b7153fa3eeb77eecc0fb.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-4bed3b7fdd81540041ae.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "bcrypt::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-bcrypt-Debug-ea839e526fa6bbbf127a.json",
+					"name" : "bcrypt",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "bcrypt_test::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-bcrypt_test-Debug-80d6b54c2b42a1f5efc2.json",
+					"name" : "bcrypt_test",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "es256k::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-es256k-Debug-aea50cfcb27567e48274.json",
+					"name" : "es256k",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-jwks-verify-Debug-831b8d91617a7d549d1f.json",
+					"name" : "jwks-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-jwks-verify-run-Debug-37ce756f9d6ab6e5ef53.json",
+					"name" : "jwks-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "kazuho-picojson::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-kazuho-picojson-Debug-19434aa509f541cd4f20.json",
+					"name" : "kazuho-picojson",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "nlohmann-json::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-nlohmann-json-Debug-363f2f3b0e0572ce0164.json",
+					"name" : "nlohmann-json",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "partial-claim-verifier::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-partial-claim-verifier-Debug-a05a52f0ca67fd6033f9.json",
+					"name" : "partial-claim-verifier",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-print-claims-Debug-00db1ceb47f57c82c7b2.json",
+					"name" : "print-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-print-claims-run-Debug-e9399542221eb764f2dd.json",
+					"name" : "print-claims-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "private-claims::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-private-claims-Debug-0dbd43698d63199acd0d.json",
+					"name" : "private-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "private-claims-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-private-claims-run-Debug-452133861833becca65b.json",
+					"name" : "private-claims-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-create-Debug-669c7981bc0ebf1eca45.json",
+					"name" : "rsa-create",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-create-run-Debug-4b9baf214ed8933a3bf4.json",
+					"name" : "rsa-create-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-verify-Debug-6f724e81b35fd79235b4.json",
+					"name" : "rsa-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-verify-run-Debug-1b580a20c00ef49f6dd3.json",
+					"name" : "rsa-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stuFBSys::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stuFBSys-Debug-0e17fb0711bdf6e8ba3f.json",
+					"name" : "stuFBSys",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						6,
+						23
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.jwt-cpp-Release-5dc782b05b50d1dfc77a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "third_party/jwt-cpp",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "_deps/nlohmann_json-build",
+					"jsonFile" : "directory-_deps.nlohmann_json-build-Release-4d6d53dfd92c4ef41674.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "build/_deps/nlohmann_json-src",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp/example",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-third_party.jwt-cpp.example-Release-751c847211e16d0b5f5a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "third_party/jwt-cpp/example",
+					"targetIndexes" : 
+					[
+						1,
+						9,
+						10,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp/example/traits",
+					"jsonFile" : "directory-third_party.jwt-cpp.example.traits-Release-71895438acc5e0e92dbc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "third_party/jwt-cpp/example/traits",
+					"targetIndexes" : 
+					[
+						2,
+						12,
+						13
+					]
+				},
+				{
+					"build" : "third_party/libbcrypt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libbcrypt-Release-7c801482404724727c60.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "third_party/libbcrypt",
+					"targetIndexes" : 
+					[
+						0,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "stuFBSys",
+					"targetIndexes" : 
+					[
+						3,
+						6,
+						23
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "jwt-cpp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "jwt-cpp-examples",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						1,
+						9,
+						10,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "jwt-cpp-traits",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						2,
+						12,
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "bcrypt",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-ALL_BUILD-Release-0af048670e32a9848db1.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-ALL_BUILD-Release-2f20aab9e5323fb2c737.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-ALL_BUILD-Release-029d0213ea71523b1223.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-a2343b3af338e3db14d2.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@ec2d60bb9e6b78ebcdc0",
+					"jsonFile" : "target-ALL_BUILD-Release-046540cd3e7cff579741.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@7ad6b70f65d238af1bcf",
+					"jsonFile" : "target-ALL_BUILD-Release-b7153fa3eeb77eecc0fb.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-4bed3b7fdd81540041ae.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "bcrypt::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-bcrypt-Release-c585b61276955fbb7d30.json",
+					"name" : "bcrypt",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "bcrypt_test::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-bcrypt_test-Release-d75cbfe5eba292ae8bfc.json",
+					"name" : "bcrypt_test",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "es256k::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-es256k-Release-cc4bd9f02a686d6998f8.json",
+					"name" : "es256k",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-jwks-verify-Release-c4f2661d1c27f716431e.json",
+					"name" : "jwks-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-jwks-verify-run-Release-37ce756f9d6ab6e5ef53.json",
+					"name" : "jwks-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "kazuho-picojson::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-kazuho-picojson-Release-8cf3ca5bb12dee28e441.json",
+					"name" : "kazuho-picojson",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "nlohmann-json::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-nlohmann-json-Release-826ae85d201fcf66e6be.json",
+					"name" : "nlohmann-json",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "partial-claim-verifier::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-partial-claim-verifier-Release-0484b7be012cca5c866d.json",
+					"name" : "partial-claim-verifier",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-print-claims-Release-1e37965640404532e695.json",
+					"name" : "print-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-print-claims-run-Release-e9399542221eb764f2dd.json",
+					"name" : "print-claims-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "private-claims::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-private-claims-Release-557fb0ea4289120dedc1.json",
+					"name" : "private-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "private-claims-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-private-claims-run-Release-452133861833becca65b.json",
+					"name" : "private-claims-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-create-Release-54b6f3317f48eef5b359.json",
+					"name" : "rsa-create",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-create-run-Release-4b9baf214ed8933a3bf4.json",
+					"name" : "rsa-create-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-verify-Release-c6908ddf3bcba84e8935.json",
+					"name" : "rsa-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-verify-run-Release-1b580a20c00ef49f6dd3.json",
+					"name" : "rsa-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stuFBSys::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stuFBSys-Release-a396adfbde9f9b2f3ceb.json",
+					"name" : "stuFBSys",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						6,
+						23
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.jwt-cpp-MinSizeRel-5dc782b05b50d1dfc77a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "third_party/jwt-cpp",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "_deps/nlohmann_json-build",
+					"jsonFile" : "directory-_deps.nlohmann_json-build-MinSizeRel-4d6d53dfd92c4ef41674.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "build/_deps/nlohmann_json-src",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp/example",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-third_party.jwt-cpp.example-MinSizeRel-751c847211e16d0b5f5a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "third_party/jwt-cpp/example",
+					"targetIndexes" : 
+					[
+						1,
+						9,
+						10,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp/example/traits",
+					"jsonFile" : "directory-third_party.jwt-cpp.example.traits-MinSizeRel-71895438acc5e0e92dbc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "third_party/jwt-cpp/example/traits",
+					"targetIndexes" : 
+					[
+						2,
+						12,
+						13
+					]
+				},
+				{
+					"build" : "third_party/libbcrypt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libbcrypt-MinSizeRel-7e62e61caaa95e85727c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "third_party/libbcrypt",
+					"targetIndexes" : 
+					[
+						0,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "stuFBSys",
+					"targetIndexes" : 
+					[
+						3,
+						6,
+						23
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "jwt-cpp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "jwt-cpp-examples",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						1,
+						9,
+						10,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "jwt-cpp-traits",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						2,
+						12,
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "bcrypt",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-0af048670e32a9848db1.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-2f20aab9e5323fb2c737.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-029d0213ea71523b1223.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-a2343b3af338e3db14d2.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@ec2d60bb9e6b78ebcdc0",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-046540cd3e7cff579741.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@7ad6b70f65d238af1bcf",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-b7153fa3eeb77eecc0fb.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-4bed3b7fdd81540041ae.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "bcrypt::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-bcrypt-MinSizeRel-e2792f91206f81db34ce.json",
+					"name" : "bcrypt",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "bcrypt_test::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-bcrypt_test-MinSizeRel-b84394c35ee0fc43827d.json",
+					"name" : "bcrypt_test",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "es256k::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-es256k-MinSizeRel-a043ca530fe414a74a40.json",
+					"name" : "es256k",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-jwks-verify-MinSizeRel-dff46cd68948bafa0ac9.json",
+					"name" : "jwks-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-jwks-verify-run-MinSizeRel-37ce756f9d6ab6e5ef53.json",
+					"name" : "jwks-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "kazuho-picojson::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-kazuho-picojson-MinSizeRel-ca33369bf807ee2de23c.json",
+					"name" : "kazuho-picojson",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "nlohmann-json::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-nlohmann-json-MinSizeRel-2a19a4ba78c56b8de9b1.json",
+					"name" : "nlohmann-json",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "partial-claim-verifier::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-partial-claim-verifier-MinSizeRel-862283c44e9b37467a73.json",
+					"name" : "partial-claim-verifier",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-print-claims-MinSizeRel-c5c9b5b2280276242d8e.json",
+					"name" : "print-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-print-claims-run-MinSizeRel-e9399542221eb764f2dd.json",
+					"name" : "print-claims-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "private-claims::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-private-claims-MinSizeRel-685355b6f3b0bdb62a6e.json",
+					"name" : "private-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "private-claims-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-private-claims-run-MinSizeRel-452133861833becca65b.json",
+					"name" : "private-claims-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-create-MinSizeRel-16a2a76b75507eee5acd.json",
+					"name" : "rsa-create",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-create-run-MinSizeRel-4b9baf214ed8933a3bf4.json",
+					"name" : "rsa-create-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-verify-MinSizeRel-9c7c3612f828266a0171.json",
+					"name" : "rsa-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-verify-run-MinSizeRel-1b580a20c00ef49f6dd3.json",
+					"name" : "rsa-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stuFBSys::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stuFBSys-MinSizeRel-a1829570b48a71044f3a.json",
+					"name" : "stuFBSys",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						6,
+						23
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.jwt-cpp-RelWithDebInfo-5dc782b05b50d1dfc77a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "third_party/jwt-cpp",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "_deps/nlohmann_json-build",
+					"jsonFile" : "directory-_deps.nlohmann_json-build-RelWithDebInfo-4d6d53dfd92c4ef41674.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "build/_deps/nlohmann_json-src",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp/example",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-third_party.jwt-cpp.example-RelWithDebInfo-751c847211e16d0b5f5a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "third_party/jwt-cpp/example",
+					"targetIndexes" : 
+					[
+						1,
+						9,
+						10,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				},
+				{
+					"build" : "third_party/jwt-cpp/example/traits",
+					"jsonFile" : "directory-third_party.jwt-cpp.example.traits-RelWithDebInfo-71895438acc5e0e92dbc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "third_party/jwt-cpp/example/traits",
+					"targetIndexes" : 
+					[
+						2,
+						12,
+						13
+					]
+				},
+				{
+					"build" : "third_party/libbcrypt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libbcrypt-RelWithDebInfo-58b1564566c92f398357.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "third_party/libbcrypt",
+					"targetIndexes" : 
+					[
+						0,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "stuFBSys",
+					"targetIndexes" : 
+					[
+						3,
+						6,
+						23
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "jwt-cpp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "jwt-cpp-examples",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						1,
+						9,
+						10,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "jwt-cpp-traits",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						2,
+						12,
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "bcrypt",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-0af048670e32a9848db1.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-2f20aab9e5323fb2c737.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-029d0213ea71523b1223.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-a2343b3af338e3db14d2.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@ec2d60bb9e6b78ebcdc0",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-046540cd3e7cff579741.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@7ad6b70f65d238af1bcf",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-b7153fa3eeb77eecc0fb.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-4bed3b7fdd81540041ae.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "bcrypt::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-bcrypt-RelWithDebInfo-4cb6b0ef1c911600209d.json",
+					"name" : "bcrypt",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "bcrypt_test::@8a02f67faf1114ca1b6f",
+					"jsonFile" : "target-bcrypt_test-RelWithDebInfo-de0c939f2fd70917d9d3.json",
+					"name" : "bcrypt_test",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "es256k::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-es256k-RelWithDebInfo-9259b75ef78cf51f47a0.json",
+					"name" : "es256k",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-jwks-verify-RelWithDebInfo-be2cb5227ebe6e9b14c3.json",
+					"name" : "jwks-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "jwks-verify-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-jwks-verify-run-RelWithDebInfo-37ce756f9d6ab6e5ef53.json",
+					"name" : "jwks-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "kazuho-picojson::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-kazuho-picojson-RelWithDebInfo-1f46ff7a7147dca84116.json",
+					"name" : "kazuho-picojson",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "nlohmann-json::@8694cd790f0dcdfaf221",
+					"jsonFile" : "target-nlohmann-json-RelWithDebInfo-b49e9e8deecf14888e93.json",
+					"name" : "nlohmann-json",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "partial-claim-verifier::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-partial-claim-verifier-RelWithDebInfo-0afc0632504cb07be905.json",
+					"name" : "partial-claim-verifier",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-print-claims-RelWithDebInfo-791d2310889e8a7d8ae7.json",
+					"name" : "print-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "print-claims-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-print-claims-run-RelWithDebInfo-e9399542221eb764f2dd.json",
+					"name" : "print-claims-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "private-claims::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-private-claims-RelWithDebInfo-0a8aa8eacd58a05cad8d.json",
+					"name" : "private-claims",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "private-claims-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-private-claims-run-RelWithDebInfo-452133861833becca65b.json",
+					"name" : "private-claims-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-create-RelWithDebInfo-6a8a5ee41d6d971713ee.json",
+					"name" : "rsa-create",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-create-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-create-run-RelWithDebInfo-4b9baf214ed8933a3bf4.json",
+					"name" : "rsa-create-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-verify-RelWithDebInfo-e594833388da945f8ce6.json",
+					"name" : "rsa-verify",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "rsa-verify-run::@8ba44e1d0f9491f276c8",
+					"jsonFile" : "target-rsa-verify-run-RelWithDebInfo-1b580a20c00ef49f6dd3.json",
+					"name" : "rsa-verify-run",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stuFBSys::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stuFBSys-RelWithDebInfo-aa6674a91f62bb360c42.json",
+					"name" : "stuFBSys",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/CT_Data/stuFBSys-lastest/server/build",
+		"source" : "D:/CT_Data/stuFBSys-lastest/server"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

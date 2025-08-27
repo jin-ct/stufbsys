@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BFC34F24-CEA8-3A5E-88AD-059B80837F4E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\CT_Data\stuFBSys-lastest\server\third_party\jwt-cpp\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/CT_Data/stuFBSys-lastest/server/third_party/jwt-cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/CT_Data/stuFBSys-lastest/server -BD:/CT_Data/stuFBSys-lastest/server/build --check-stamp-file D:/CT_Data/stuFBSys-lastest/server/build/third_party/jwt-cpp/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\CT_Data\stuFBSys-lastest\server\third_party\jwt-cpp\cmake\jwt-cpp-config.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\BasicConfigVersion-ExactVersion.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\CMakeDependentOption.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FetchContent.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindOpenSSL.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\GNUInstallDirs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\SelectLibraryConfigurations.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/CT_Data/stuFBSys-lastest/server/third_party/jwt-cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/CT_Data/stuFBSys-lastest/server -BD:/CT_Data/stuFBSys-lastest/server/build --check-stamp-file D:/CT_Data/stuFBSys-lastest/server/build/third_party/jwt-cpp/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\CT_Data\stuFBSys-lastest\server\third_party\jwt-cpp\cmake\jwt-cpp-config.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\BasicConfigVersion-ExactVersion.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\CMakeDependentOption.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FetchContent.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindOpenSSL.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\GNUInstallDirs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\SelectLibraryConfigurations.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/CT_Data/stuFBSys-lastest/server/third_party/jwt-cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/CT_Data/stuFBSys-lastest/server -BD:/CT_Data/stuFBSys-lastest/server/build --check-stamp-file D:/CT_Data/stuFBSys-lastest/server/build/third_party/jwt-cpp/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\CT_Data\stuFBSys-lastest\server\third_party\jwt-cpp\cmake\jwt-cpp-config.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\BasicConfigVersion-ExactVersion.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\CMakeDependentOption.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FetchContent.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindOpenSSL.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\GNUInstallDirs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\SelectLibraryConfigurations.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/CT_Data/stuFBSys-lastest/server/third_party/jwt-cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/CT_Data/stuFBSys-lastest/server -BD:/CT_Data/stuFBSys-lastest/server/build --check-stamp-file D:/CT_Data/stuFBSys-lastest/server/build/third_party/jwt-cpp/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\CT_Data\stuFBSys-lastest\server\third_party\jwt-cpp\cmake\jwt-cpp-config.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\BasicConfigVersion-ExactVersion.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\CMakeDependentOption.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FetchContent.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindOpenSSL.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\GNUInstallDirs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\SelectLibraryConfigurations.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\ZERO_CHECK.vcxproj">
+      <Project>{DF7F7B91-0A62-3E64-B513-27AD4904284B}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\example\es256k.vcxproj">
+      <Project>{84B80611-E273-387E-B3C0-73BCFD28A465}</Project>
+      <Name>es256k</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\example\jwks-verify.vcxproj">
+      <Project>{ED5BEA4F-A7B1-327E-94C6-A6FD600527CC}</Project>
+      <Name>jwks-verify</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\example\traits\kazuho-picojson.vcxproj">
+      <Project>{9FE5BD40-2CC7-350A-B266-5C14D65E2907}</Project>
+      <Name>kazuho-picojson</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\example\traits\nlohmann-json.vcxproj">
+      <Project>{D810C440-E161-3664-AEF3-E9F4E483CF8B}</Project>
+      <Name>nlohmann-json</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\example\partial-claim-verifier.vcxproj">
+      <Project>{C60BDB0D-35CF-31E3-8DDA-0A135110E44E}</Project>
+      <Name>partial-claim-verifier</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\example\print-claims.vcxproj">
+      <Project>{C553F0C7-91E2-3151-A592-36AFCB4EDAEB}</Project>
+      <Name>print-claims</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\example\private-claims.vcxproj">
+      <Project>{D28A5E65-AF15-34AC-9129-484BB32F4A17}</Project>
+      <Name>private-claims</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\example\rsa-create.vcxproj">
+      <Project>{BC50D688-799F-3FF7-9314-CD062B07563C}</Project>
+      <Name>rsa-create</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\CT_Data\stuFBSys-lastest\server\build\third_party\jwt-cpp\example\rsa-verify.vcxproj">
+      <Project>{8A8D3E56-690B-36EC-B96C-1923103A6CA2}</Project>
+      <Name>rsa-verify</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

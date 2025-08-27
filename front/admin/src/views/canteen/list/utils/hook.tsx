@@ -1,0 +1,277 @@
+import "./reset.css";
+import dayjs from "dayjs";
+import editForm from "../form/index.vue";
+import importfromExcel from "../form/import-from-excel.vue";
+import { message } from "@/utils/message";
+import { addDialog } from "@/components/ReDialog";
+import type { PaginationProps } from "@pureadmin/table";
+import type { FormItemProps } from "../utils/types";
+import { getKeyList, deviceDetection, is } from "@pureadmin/utils";
+import {
+  getDishList,
+  addDish,
+  updateDish,
+  deleteDish,
+  importDishes
+} from "@/api/canteen";
+import { type Ref, h, ref, toRaw, computed, reactive, onMounted } from "vue";
+
+export function useDish(tableRef: Ref) {
+  const form = reactive({
+    dishname: "",
+    date: ["", ""]
+  });
+  const formRef = ref();
+  const importFormRef = ref();
+  const dataList = ref([]);
+  const loading = ref(true);
+  const selectedNum = ref(0);
+  const pagination = reactive<PaginationProps>({
+    total: 0,
+    pageSize: 10,
+    currentPage: 1,
+    background: true
+  });
+  const columns: TableColumnList = [
+    {
+      label: "勾选列", // 如果需要表格多选，此处label必须设置
+      type: "selection",
+      fixed: "left",
+      reserveSelection: true // 数据刷新后保留选项
+    },
+    {
+      label: "ID",
+      prop: "dish_id",
+      width: 90
+    },
+    {
+      label: "菜品名称",
+      prop: "name",
+      width: 90
+    },
+    {
+      label: "描述",
+      slot: "description",
+      minWidth: 130
+    },
+    {
+      label: "日期",
+      minWidth: 100,
+      prop: "date",
+      formatter: ({ date }) => dayjs(date).format("YYYY-MM-DD")
+    },
+    {
+      label: "操作",
+      fixed: "right",
+      width: 180,
+      slot: "operation"
+    }
+  ];
+  const buttonClass = computed(() => {
+    return [
+      "h-[20px]!",
+      "reset-margin",
+      "text-gray-500!",
+      "dark:text-white!",
+      "dark:hover:text-primary!"
+    ];
+  });
+
+  function handleUpdate(row) {
+    console.log(row);
+  }
+
+  async function handleDelete(row) {
+    const { success } = await deleteDish({ ids: [row.dish_id] });
+    if (success) {
+      message(`删除成功`, { type: "success" });
+    } else {
+      message(`删除失败`, { type: "error" });
+      return;
+    }
+    onSearch();
+  }
+
+  function handleSizeChange(val: number) {
+    // console.log(`${val} items per page`);
+    pagination.pageSize = val;
+    pagination.currentPage = 1;
+    onSearch();
+  }
+
+  function handleCurrentChange(val: number) {
+    // console.log(`current page: ${val}`);
+    pagination.currentPage = val;
+    onSearch();
+  }
+
+  /** 当CheckBox选择项发生变化时会触发该事件 */
+  function handleSelectionChange(val) {
+    selectedNum.value = val.length;
+    // 重置表格高度
+    tableRef.value.setAdaptive();
+  }
+
+  /** 取消选择 */
+  function onSelectionCancel() {
+    selectedNum.value = 0;
+    // 用于多选表格，清空的选择
+    tableRef.value.getTableRef().clearSelection();
+  }
+
+  /** 批量删除 */
+  async function onbatchDel() {
+    // 返回当前选中的行
+    const curSelected = tableRef.value.getTableRef().getSelectionRows();
+    const { success } = await deleteDish({
+      ids: getKeyList(curSelected, "dish_id")
+    });
+    if (success) {
+      message(`已删除ID为 ${getKeyList(curSelected, "dish_id")} 的数据`, {
+        type: "success"
+      });
+      tableRef.value.getTableRef().clearSelection();
+    } else {
+      message(`删除失败`, { type: "error" });
+    }
+    onSearch();
+  }
+
+  async function onSearch() {
+    loading.value = true;
+    const { success, data } = await getDishList({
+      search: toRaw(form),
+      pageSize: pagination.pageSize,
+      toPage: pagination.currentPage
+    });
+
+    if (success) {
+      dataList.value = data.list;
+      pagination.total = data.total;
+    }
+
+    setTimeout(() => {
+      loading.value = false;
+    }, 500);
+  }
+
+  const resetForm = formEl => {
+    if (!formEl) return;
+    formEl.resetFields();
+    onSearch();
+  };
+
+  onMounted(async () => {
+    onSearch();
+  });
+
+  function openDialog(title = "添加", row?: FormItemProps) {
+    addDialog({
+      title: `${title}菜品`,
+      props: {
+        formInline: {
+          dish_id: row?.dish_id ?? null,
+          title,
+          name: row?.name ?? "",
+          description: row?.description ?? "",
+          date: row?.date ?? dayjs().format("YYYY-MM-DD")
+        }
+      },
+      width: "46%",
+      draggable: true,
+      fullscreen: deviceDetection(),
+      fullscreenIcon: true,
+      closeOnClickModal: false,
+      contentRenderer: () => h(editForm, { ref: formRef, formInline: null }),
+      beforeSure: (done, { options }) => {
+        const FormRef = formRef.value.getRef();
+        const curData = options.props.formInline as FormItemProps;
+        function chores(isSuccess = true, errMessage = "") {
+          if (isSuccess) {
+            message(`${title}成功`, {
+              type: "success"
+            });
+          } else {
+            message(`添加失败：${errMessage}`, {
+              type: "error"
+            });
+          }
+          done(); // 关闭弹框
+          onSearch(); // 刷新表格数据
+        }
+        FormRef.validate(async valid => {
+          if (valid) {
+            // console.log("curData", curData);
+            if (title === "添加") {
+              const { success, data } = await addDish(curData);
+              chores(success, data.message);
+            } else {
+              const { success, data } = await updateDish(curData);
+              chores(success, data.message);
+            }
+          }
+        });
+      }
+    });
+  }
+
+  function importFromExcel() {
+    addDialog({
+      title: "导入Excel表格",
+      props: {
+        formInline: {
+          title: "导入Excel表格",
+          isCover: true,
+          data: ""
+        }
+      },
+      width: "46%",
+      draggable: true,
+      fullscreen: deviceDetection(),
+      fullscreenIcon: true,
+      closeOnClickModal: false,
+      contentRenderer: () =>
+        h(importfromExcel, { ref: importFormRef, formInline: null }),
+      beforeSure: async (done, { options }) => {
+        const curData = options.props.formInline;
+        if (curData.isReady) {
+          const { success, data } = await importDishes({
+            data: curData.data,
+            isCover: curData.isCover
+          });
+          if (success) {
+            message("Excel表格导入成功", { type: "success" });
+          } else {
+            message(`导入失败：${data.message}`, { type: "error" });
+          }
+          done(); // 关闭弹框
+          onSearch();
+        } else {
+          message("未选择有效文件，若解析失败请重新导入", { type: "warning" });
+        }
+      }
+    });
+  }
+
+  return {
+    form,
+    loading,
+    columns,
+    dataList,
+    selectedNum,
+    pagination,
+    buttonClass,
+    deviceDetection,
+    onSearch,
+    resetForm,
+    onbatchDel,
+    openDialog,
+    handleUpdate,
+    handleDelete,
+    handleSizeChange,
+    onSelectionCancel,
+    handleCurrentChange,
+    handleSelectionChange,
+    importFromExcel
+  };
+}

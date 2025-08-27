@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>package/stufbsys.zip</file>
+        <file>img/banner.png</file>
+    </qresource>
+</RCC>
