@@ -10,11 +10,11 @@
         {
             "name": "default",
             "rdbms": "postgresql",
-            "host": "192.168.3.62",
+            "host": "127.0.0.1",
             "port": 5432,
             "dbname": "stufbsys",
             "user": "postgres",
-            "passwd": "chuangtian",
+            "passwd": "",
             "is_fast": false,
             "client_encoding": "utf8",
             "number_of_connections": 1,
@@ -127,24 +127,18 @@
             }
         },
         {
-            //name: The class name of the plugin
             "name": "JwtPlugin",
-            //dependencies: Plugins that the plugin depends on. It can be commented out
             "dependencies": [],
-            //config: The configuration of the plugin. This json object is the parameter to initialize the plugin.
-            //It can be commented out
             "config": {
-                "secret": "secret",
+                "secret": "",
                 "sessionTime": 86400
             }
         }
     ],
     "custom_config": {
-        "secret": "secret",
-        "sessionTime": 86400,
         "defaultTeacherPassword": "teacher123456",
-        "encryptTextKey": "apa2j4b7tm5x8dhdyumvmwdaxjszx8b8", // 32字节
-        "encryptTextIv": "7uvwdeker3hfyz8v", // 16字节
+        "encryptTextKey": "", // 32字节
+        "encryptTextIv": "",  // 16字节
         "verifyImageCompareThreshold": 0.86,
         "verifyImageSimpleCompareThreshold": 0.75
     }
