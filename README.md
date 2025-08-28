@@ -44,7 +44,7 @@ psql -U "posetgres" -d "stufbsys" -f "/stufbsys_db.sql"
 
 并编辑以下自定义选项
 
-```json
+```
 // 其他配置...
 {
     "name": "JwtPlugin",
