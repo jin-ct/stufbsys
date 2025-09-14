@@ -110,11 +110,12 @@ void updateTeacherStatisticalData()
 {
     LOG_DEBUG << "Updating Teacher Statistical Data";
     auto dbClientPtr = drogon::app().getDbClient();
-    Mapper<TeacherDataStatistics> mp_tds(dbClientPtr);
+    auto transPtr = dbClientPtr->newTransaction();
+    Mapper<TeacherDataStatistics> mp_tds(transPtr);
     auto dataCount = mp_tds.count();
-    Mapper<Teacher> mp_t(dbClientPtr);
+    Mapper<Teacher> mp_t(transPtr);
     mp_t.findAll(
-        [dataCount](const std::vector<Teacher>& teachers) {
+        [dataCount, transPtr](const std::vector<Teacher>& teachers) {
             std::string sql = "INSERT INTO teacher_data_statistics (week, teacher_id) VALUES ";
             size_t teacherCount = teachers.size();
             if (teacherCount == 0) return;
@@ -126,11 +127,9 @@ void updateTeacherStatisticalData()
             }
             sql.pop_back();
 
-            auto dbClientPtr = drogon::app().getDbClient();
             if (dataCount >= 14*teacherCount) {
-                auto transPtr = dbClientPtr->newTransaction();
                 transPtr->execSqlAsync(
-                    "DELETE FROM data_statistics WHERE date = (SELECT MIN(date) FROM data_statistics)",
+                    "DELETE FROM teacher_data_statistics WHERE date = (SELECT MIN(date) FROM teacher_data_statistics)",
                     [transPtr, sql](const drogon::orm::Result& r) {
                         transPtr->execSqlAsync(
                             sql,
@@ -149,7 +148,7 @@ void updateTeacherStatisticalData()
             }
             else
             {
-                dbClientPtr->execSqlAsync(
+                transPtr->execSqlAsync(
                     sql,
                     [](const drogon::orm::Result& r) {
                         LOG_DEBUG << "Insert new data success";

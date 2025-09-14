@@ -25,6 +25,7 @@ class TeacherLogin : public drogon::HttpController<TeacherLogin>
       void getAsyncRoutes(const HttpRequestPtr& req, std::function<void(const HttpResponsePtr&)>&& callback) const;
 
       static std::string getToken(const Teacher& user);
+      static drogon::HttpResponsePtr getTchLoginJsonDataResponse(const Teacher& tch, std::shared_ptr<Teacher> pNewUserPtr);
 
   private:
       std::string suggestionsRouterJsonStr =

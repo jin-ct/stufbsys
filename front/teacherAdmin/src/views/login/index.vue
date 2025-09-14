@@ -3,7 +3,7 @@ import Motion from "./utils/motion";
 import { useRouter } from "vue-router";
 import { message } from "@/utils/message";
 import { loginRules } from "./utils/rule";
-import { ref, reactive, toRaw } from "vue";
+import { ref, reactive, toRaw, h } from "vue";
 import { debounce } from "@pureadmin/utils";
 import { useNav } from "@/layout/hooks/useNav";
 import { useEventListener } from "@vueuse/core";
@@ -14,6 +14,8 @@ import { initRouter, getTopMenu } from "@/router/utils";
 import { bg, avatar, illustration } from "./utils/static";
 import { useRenderIcon } from "@/components/ReIcon/src/hooks";
 import { useDataThemeChange } from "@/layout/hooks/useDataThemeChange";
+import { addDialog, closeDialog } from "@/components/ReDialog";
+import SelectAccountDialog from "./components/SelectAccountDialog.vue";
 
 import dayIcon from "@/assets/svg/day.svg?component";
 import darkIcon from "@/assets/svg/dark.svg?component";
@@ -41,11 +43,52 @@ const ruleForm = reactive({
   password: ""
 });
 
+// 选择账号后重新登录
+function loginWithTeacherId(teacherId: string) {
+  loading.value = true;
+  useUserStoreHook()
+    .loginByUsername({
+      username: ruleForm.username,
+      password: ruleForm.password,
+      teacherId: Number(teacherId)
+    })
+    .then(res => {
+      if (res.success) {
+        return initRouter().then(() => {
+          disabled.value = true;
+          router
+            .push(getTopMenu(true).path)
+            .then(() => {
+              message("登录成功", { type: "success" });
+              if (res.data.firstLogin) {
+                setTimeout(() => {
+                  router.push("/platform/account/index");
+                  message("首次登录请更改密码", {
+                    type: "info",
+                    duration: 4000
+                  });
+                }, 1200);
+              }
+            })
+            .finally(() => (disabled.value = false));
+        });
+      } else {
+        message(res.data["message"], { type: "error" });
+      }
+    })
+    .finally(() => (loading.value = false));
+}
+
 const onLogin = async (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   await formEl.validate(valid => {
     if (valid) {
       loading.value = true;
+      let teacherId = localStorage.getItem("login_teacherId");
+      if (teacherId !== null && teacherId !== '') {
+        loginWithTeacherId(teacherId);
+        return;
+      }
       useUserStoreHook()
         .loginByUsername({
           username: ruleForm.username,
@@ -73,7 +116,31 @@ const onLogin = async (formEl: FormInstance | undefined) => {
                 .finally(() => (disabled.value = false));
             });
           } else {
-            message(res.data["message"], { type: "error" });
+            if (Array.isArray(res.data)) {
+              // 弹出选择账号对话框
+              addDialog({
+                title: "选择您的账号",
+                width: "500px",
+                props: {
+                  accounts: res.data
+                },
+                draggable: true,
+                closeOnClickModal: false,
+                hideFooter: true,
+                contentRenderer: ({ options, index }) =>
+                  h(SelectAccountDialog, {
+                    accounts: options.props.accounts,
+                    onSelect: (teacherId: string) => {
+                      // 关闭弹窗并重新登录，并且保存id到本地存储
+                      closeDialog(options, index);
+                      localStorage.setItem("login_teacherId", teacherId);
+                      loginWithTeacherId(teacherId);
+                    }
+                  })
+              });
+            } else {
+              message(res.data["message"], { type: "error" });
+            }
           }
         })
         .finally(() => (loading.value = false));

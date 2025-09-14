@@ -9,6 +9,7 @@ namespace drogon {
 		{
 			user.setName((*json)["username"].asString());
 			user.setPassword((*json)["password"].asString());
+			user.setTeacherId(json->isMember("teacherId") ? (*json)["teacherId"].asInt64() : 0);
 		}
 		return user;
 	}
@@ -21,31 +22,61 @@ void TeacherLogin::login(const HttpRequestPtr& req, std::function<void(const Htt
 
 	auto callbackPtr = std::make_shared<std::function<void(const HttpResponsePtr&)>>(std::move(callback));
 	auto dbClientPtr = drogon::app().getDbClient();
+
+	auto teacherId = pNewUserPtr->getValueOfTeacherId();
+
 	Mapper<Teacher> mp(dbClientPtr);
 	mp.findBy(
 		Criteria(Teacher::Cols::_name, CompareOperator::EQ, pNewUserPtr->getValueOfName()),
-		[callbackPtr, pNewUserPtr](const std::vector<Teacher>& accounts) {
+		[callbackPtr, pNewUserPtr, teacherId](const std::vector<Teacher>& accounts) {
 			if (accounts.empty()) {
 				Json::Value data{};
 				data["message"] = "用户名或密码错误";
 				(*callbackPtr)(getJsonDataResponse(false, data));
 				LOG_DEBUG << "Username or Password error";
+				return;
 			}
-			else if (BCrypt::validatePassword(pNewUserPtr->getValueOfPassword(), accounts[0].getValueOfPassword())) {
-				Json::Value data{};
-				std::string token = getToken(accounts[0]);
-				data["accessToken"] = token;
-				data["refreshToken"] = token;
-				data["username"] = accounts[0].getValueOfName();
-				data["nickname"] = accounts[0].getValueOfName();
-				data["teacherId"] = *(accounts[0].getTeacherId());
-				data["expires"] = getExpiresFromCurrentTime(drogon::app().getCustomConfig()["sessionTime"].asInt() - 300);
-				data["roles"] = Json::Value(Json::arrayValue);
-				data["permissions"] = Json::Value(Json::arrayValue);
-				data["permissions"].append("*:*:*");
-				data["avatar"] = "";
-				data["firstLogin"] = drogon::app().getCustomConfig()["defaultTeacherPassword"].asString() == pNewUserPtr->getValueOfPassword();
-				(*callbackPtr)(getJsonDataResponse(true, data));
+			if (accounts.size() > 1) {
+				std::vector<Teacher> tchs;
+				for (const Teacher& tch : accounts) {
+					if (teacherId != 0) {
+						if (teacherId == tch.getValueOfTeacherId()) {
+							if (BCrypt::validatePassword(pNewUserPtr->getValueOfPassword(), tch.getValueOfPassword())) {
+								(*callbackPtr)(getTchLoginJsonDataResponse(tch, pNewUserPtr));
+								LOG_DEBUG << "Login success";
+							} else {
+								Json::Value data{};
+								data["message"] = "用户名或密码错误";
+								(*callbackPtr)(getJsonDataResponse(false, data));
+								LOG_DEBUG << "Username or Password error";
+							}
+							return;
+						}
+					} else if (BCrypt::validatePassword(pNewUserPtr->getValueOfPassword(), tch.getValueOfPassword())) {
+						tchs.push_back(tch);
+					}
+				}
+				if (tchs.size() == 1) {
+					(*callbackPtr)(getTchLoginJsonDataResponse(tchs[0], pNewUserPtr));
+					LOG_DEBUG << "Login success";
+				} else if (tchs.size() > 1) {
+					Json::Value jsonTchs(Json::arrayValue);
+					for (const Teacher& tch : tchs) {
+						Json::Value jsonTch;
+						jsonTch["name"] = tch.getValueOfName();
+						jsonTch["grade"] = tch.getValueOfGrade();
+						jsonTch["class"] = tch.getValueOfClass();
+						jsonTch["subject"] = tch.getValueOfSubject();
+						jsonTch["teacherId"] = tch.getValueOfTeacherId();
+						jsonTchs.append(jsonTch);
+					}
+					(*callbackPtr)(getJsonDataResponse(false, jsonTchs));
+					LOG_DEBUG << "Multiple accounts found";
+				}
+				return;
+			}
+			if (BCrypt::validatePassword(pNewUserPtr->getValueOfPassword(), accounts[0].getValueOfPassword())) {
+				(*callbackPtr)(getTchLoginJsonDataResponse(accounts[0], pNewUserPtr));
 				LOG_DEBUG << "Login success";
 			}
 			else {
@@ -126,4 +157,22 @@ std::string TeacherLogin::getToken(const Teacher& user)
 	auto jwt = jwtPtr->init();
 	auto token = jwt.encode("teacher_id", *(user.getTeacherId()));
 	return token;
+}
+
+drogon::HttpResponsePtr TeacherLogin::getTchLoginJsonDataResponse(const Teacher& tch, std::shared_ptr<Teacher> pNewUserPtr)
+{
+	Json::Value data{};
+	std::string token = TeacherLogin::getToken(tch);
+	data["accessToken"] = token;
+	data["refreshToken"] = token;
+	data["username"] = tch.getValueOfName();
+	data["nickname"] = tch.getValueOfName();
+	data["teacherId"] = tch.getValueOfTeacherId();
+	data["expires"] = getExpiresFromCurrentTime(drogon::app().getCustomConfig()["sessionTime"].asInt() - 300);
+	data["roles"] = Json::Value(Json::arrayValue);
+	data["permissions"] = Json::Value(Json::arrayValue);
+	data["permissions"].append("*:*:*");
+	data["avatar"] = "";
+	data["firstLogin"] = drogon::app().getCustomConfig()["defaultTeacherPassword"].asString() == pNewUserPtr->getValueOfPassword();
+	return getJsonDataResponse(true, data);
 }

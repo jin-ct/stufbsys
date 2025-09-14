@@ -221,6 +221,7 @@ void requestAiApi(const Json::Value& messages, const std::function<void(Json::Va
             std::string key = "";
             std::string modelName = "";
             for (const auto& value : values) {
+                if (value.getValueOfValue() == "") return;
                 if (value.getValueOfName() == "ai_api_link") link = value.getValueOfValue();
                 if (value.getValueOfName() == "ai_model_name") modelName = value.getValueOfValue();
                 if (value.getValueOfName() == "ai_api_key") key = decryptText(value.getValueOfValue());
@@ -267,7 +268,7 @@ void requestAiApi(const Json::Value& messages, const std::function<void(Json::Va
                         callback(res);
                     }
                 },
-                30.0
+                60.0
             );
         },
         [callback](const DrogonDbException& e) {
