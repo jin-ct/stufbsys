@@ -111,8 +111,10 @@ void updateTeacherStatisticalData()
     LOG_DEBUG << "Updating Teacher Statistical Data";
     auto dbClientPtr = drogon::app().getDbClient();
     auto transPtr = dbClientPtr->newTransaction();
-    Mapper<TeacherDataStatistics> mp_tds(transPtr);
-    auto dataCount = mp_tds.count();
+    auto StatisticalDates = transPtr->execSqlSync(
+        "SELECT COUNT(DISTINCT date) FROM teacher_data_statistics"
+    );
+    int dataCount = StatisticalDates[0][0].as<int>();
     Mapper<Teacher> mp_t(transPtr);
     mp_t.findAll(
         [dataCount, transPtr](const std::vector<Teacher>& teachers) {
@@ -127,7 +129,7 @@ void updateTeacherStatisticalData()
             }
             sql.pop_back();
 
-            if (dataCount >= 14*teacherCount) {
+            if (dataCount >= 14) {
                 transPtr->execSqlAsync(
                     "DELETE FROM teacher_data_statistics WHERE date = (SELECT MIN(date) FROM teacher_data_statistics)",
                     [transPtr, sql](const drogon::orm::Result& r) {
