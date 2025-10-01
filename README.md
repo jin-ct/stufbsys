@@ -22,7 +22,7 @@
 
 ### 方式二：自定义部署
 
-使用自定义部署则默认你已熟悉Nginx、PostgreSQL的安装及基本配置，目前后端仅有Windows系统的打包文件，如需要Linux系统运行请自行编译。
+使用自定义部署则默认你已熟悉Nginx、PostgreSQL的安装及基本配置。
 
 #### 1. 发布版打包文件下载
 
@@ -39,6 +39,8 @@ psql -U "posetgres" -d "stufbsys" -f "/stufbsys_db.sql"
 ```
 
 #### 3. 部署后端
+
+##### Windows
 
 将`server-win64.zip`解压到任意合适的位置，编辑`config.json`配置文件，完成数据库连接配置，可参考[drogon文档：数据库配置](https://drogonframework.github.io/drogon-docs/#/CHN/CHN-11-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6?id=db_clients%e6%95%b0%e6%8d%ae%e5%ba%93%e5%ae%a2%e6%88%b7%e7%ab%af)
 
@@ -65,6 +67,12 @@ psql -U "posetgres" -d "stufbsys" -f "/stufbsys_db.sql"
 ```
 
 完成配置后直接启动`stuFBSys.exe`即可，如需创建Windows服务，请使用[winsw](https://github.com/winsw/winsw)
+
+##### Linux
+
+将`server-linux64.zip`解压到任意合适的位置，编辑`config.json`配置文件，完成数据库连接配置，可参考[drogon文档：数据库配置](https://drogonframework.github.io/drogon-docs/#/CHN/CHN-11-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6?id=db_clients%e6%95%b0%e6%8d%ae%e5%ba%93%e5%ae%a2%e6%88%b7%e7%ab%af)
+
+运行在终端运行`./stuFBSys`
 
 #### 4. 部署前端
 
