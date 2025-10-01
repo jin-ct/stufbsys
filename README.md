@@ -72,7 +72,7 @@ psql -U "posetgres" -d "stufbsys" -f "/stufbsys_db.sql"
 
 将`server-linux64.zip`解压到任意合适的位置，编辑`config.json`配置文件，完成数据库连接配置，可参考[drogon文档：数据库配置](https://drogonframework.github.io/drogon-docs/#/CHN/CHN-11-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6?id=db_clients%e6%95%b0%e6%8d%ae%e5%ba%93%e5%ae%a2%e6%88%b7%e7%ab%af)
 
-运行在终端运行`./stuFBSys`
+在终端运行`./stuFBSys`
 
 #### 4. 部署前端
 
