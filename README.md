@@ -1,4 +1,12 @@
+<div align="center">
+    
+ ![Logo](front/reception/public/favicon.ico)
 # 学生反馈网站系统
+ ![GitHub issues](https://img.shields.io/github/issues/jin-ct/stufbsys?logo=github&color=blue)  ![GitHub stars](https://img.shields.io/github/stars/jin-ct/stufbsys)
+
+</div>
+---
+
 ### 概述
 
 这是一个适用于中学的学生反馈网站项目，具有简单易用的特点，您无需任何技术即可在服务器上完成网站部署，并快速投入使用，使用该网站系统可有效拓宽学生反馈渠道，促进学生与学校共同发展。该项目后端使用c++/drogon框架构建，前端使用vue3+vite构建。
