@@ -2,7 +2,9 @@
     
  ![Logo](front/reception/public/favicon.ico)
 # 学生反馈网站系统
- ![GitHub issues](https://img.shields.io/github/issues/jin-ct/stufbsys?logo=github&color=blue)  ![GitHub stars](https://img.shields.io/github/stars/jin-ct/stufbsys)
+ ![GitHub license](https://img.shields.io/github/license/jin-ct/stufbsys)
+ ![GitHub issues](https://img.shields.io/github/issues/jin-ct/stufbsys?logo=github&color=blue)
+ ![GitHub stars](https://img.shields.io/github/stars/jin-ct/stufbsys)
 
 </div>
 
